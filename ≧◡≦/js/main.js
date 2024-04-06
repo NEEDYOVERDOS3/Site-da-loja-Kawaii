@@ -16,6 +16,61 @@ if(navclose){
     })
 }
 
+/*================= ABRIR CARRINHO ===============*/
+function abrirCarrinho() {
+    document.getElementById("carrinhoLateral").style.width = "350px";
+}
+
+function fecharCarrinho() {
+    document.getElementById("carrinhoLateral").style.width = "0";
+}
+
+document.getElementById('abrirCarrinho').addEventListener('click', abrirCarrinho);
+
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('adicionarCarrinho')) {
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.addcarrinho').forEach(button => {
+        button.addEventListener('click', function() {
+            const produto = this.closest('.produto');
+            const nome = produto.getAttribute('data-nome');
+            const preco = produto.getAttribute('data-preco');
+            const imagem = produto.getAttribute('data-imagem');
+            adicionarAoCarrinho(nome, preco, imagem);
+        });
+    });
+});
+
+function adicionarAoCarrinho(nome, preco, imagem) {
+    const precoFloat = parseFloat(preco.replace(',', '.'));
+    const itemExistente = itensCarrinho.find(item => item.nome === nome);
+    if (itemExistente) {
+        itemExistente.quantidade += 1;
+    } else {
+        itensCarrinho.push({ nome, preco: precoFloat, quantidade: 1, imagem });
+    }
+    atualizarCarrinho();
+}
+
+
+let itensCarrinho = [];
+
+function atualizarCarrinho() {
+    let carrinhoHTML = '<a href="javascript:void(0)" class="fecharbtn" onclick="fecharCarrinho()">&times;</a><h2 class="carrinho_titulo">Seu Carrinho</h2><div class="itens-carrinho">';
+    
+    let total = 0;
+    itensCarrinho.forEach((item) => {
+        carrinhoHTML += `<div class="item-carrinho"><img src="${item.imagem}" alt="${item.nome}"><p>${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.quantidade}</p></div>`;
+        total += item.preco * item.quantidade;
+    });
+
+    carrinhoHTML += `</div><h3 class="total-carrinho">Total: R$ ${total.toFixed(2)}</h3>`;
+
+    document.getElementById("carrinhoLateral").innerHTML = carrinhoHTML;
+}
 /*=============== REMOVE MENU CELL ===============*/
 const navlink = document.getElementById('.nav_link')
 

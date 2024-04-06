@@ -148,6 +148,12 @@ header{
   column-gap: .5rem;
   align-items: center;
 }
+.nav_acoes i{
+  transition: color .4s;
+}
+.nav_acoes i:hover{
+  color: var(--first-color);
+}
 
 /* NAVEGAÇÃO PARA CELULAR */
 @media screen and (max-width: 1150px) {
@@ -269,6 +275,84 @@ header{
 }
 .btn_link:hover{
   color: var(--first-color);
+}
+/*===============CARRINHO==================*/
+.carrinho_conteiner{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: hsla(228, 24%, 6%, .2);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.carrinho_conteiner a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--black-color);
+  display: block;
+  transition: 0.3s;
+}
+.carrinho_conteiner a:hover{
+  color: var(--first-color);
+}
+.carrinho_tabela{
+  justify-self: center;
+  justify-content: flex-start;
+}
+.fecharBtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.addcarrinho{
+  position: absolute;
+  outline: none;
+  border: none;
+  background-color: var(--white-color);
+  padding: 6px;
+  border-radius: 4rem;
+  display: grid;
+  cursor: pointer;
+}
+/*=============== JAVA CARRINHO ===============*/
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding: 9px;
+  cursor:default;
+}
+.carrinho_titulo, .item-carrinho h3 {
+  color: var(--first-color-alt);
+  font-weight: var(--font-bold);
+  padding: 9px;
+}
+.item-carrinho img {
+  margin-right: 15px;
+  width: 100px;
+  height: auto;
+}
+.carrinho_titulo p{
+  padding: 9px;
+}
+.fecharbtn {
+  cursor: pointer;
+  font-size: 1.5em;
+}
+.total-carrinho {
+  justify-self: center;
+  padding: 10px 3px;
 }
 /*=============== NOVIDADES ===============*/
 .novo_data{

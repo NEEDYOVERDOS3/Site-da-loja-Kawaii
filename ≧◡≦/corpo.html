@@ -52,7 +52,7 @@
             </div>
             <div class="nav_acoes">
                <i class="ri-emotion-line"></i>
-               <i class="ri-shopping-cart-2-line"></i>
+               <i class="ri-shopping-cart-2-line" id="abrirCarrinho"></i>
                <div class="nav_toggle" id="nav_toggle">
                   <i class="ri-menu-line"></i>
                </div>
@@ -85,7 +85,19 @@
                <a href="" class="btn_link">Mais Detalhes</a>
             </div>
          </section>
-
+         <!--==================== CARRINHO ====================-->         
+         <section class="carrinho section" id="carrinho">
+            <div class="carrinho_conteiner conteiner grid" id="carrinhoLateral">
+               <a href="javascript:void(0)" class="fecharbtn" onclick="fecharCarrinho()">&times;</a>
+               <div class="carrinho_tabela">
+                  <h2 class="carrinho_titulo">
+                     Seu Carrinho
+                  </h2>
+                  <p>Aqui estão seus pedidos</p>
+               </div>
+            </div>
+            <script src="js/main.js"></script>
+         </section>
          <!--==================== NOVIDADES ====================-->
          <section class="new section" id="novos">
             <div class="novidade_conteiner conteiner grid">
@@ -124,37 +136,57 @@
                   <img src="img/site roupa kawaii/camisa_kuromi.png" class="loja_img">
                   <h3 class="loja_titulo">CAMISETA PRETA KUROMI CHEEKY</h3>
                   <span class="loja_preco">R$ 129,00</span>
-                  <button class="loja_botao">
-                     <a href="roupas/roupas.html" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
-                  </button>
+                  <div class="botoes_para_roupas">
+                     <div class="produto" data-nome="CAMISETA PRETA KUROMI CHEEKY" data-preco="129,00" data-imagem="img/site roupa kawaii/miniaturas/camisa_kuromi (miniatura).png">
+                        <button class="addcarrinho">ADD Carrinho</button>
+                     </div>
+                     <button class="loja_botao">
+                        <a href="roupas/roupas.html" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
+                     </button>
+                  </div>
                </article>
                <article class="loja_card">
                   <img src="img/site roupa kawaii/camisa_kuromi2.png" class="loja_img">
                   <h3 class="loja_titulo">CAMISETA PRETA KUROMI FORTUNE</h3>
                   <span class="loja_preco">R$ 129,00</span>
-                  <button class="loja_botao">
-                     <a href="" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
-                  </button>
+                  <div class="botoes_para_roupas">
+                     <div class="produto" data-nome="CAMISETA PRETA KUROMI FORTUNE" data-preco="129,00" data-imagem="img/site roupa kawaii/miniaturas/camisa_kuromi2 (miniatura).png">
+                        <button class="addcarrinho">ADD Carrinho</button>
+                     </div>
+                     <button class="loja_botao">
+                        <a href="" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
+                     </button>
+                  </div>
                </article>
                <article class="loja_card">
                   <img src="img/site roupa kawaii/moletom_kuromi.png" class="loja_img">
                   <h3 class="loja_titulo">MOLETOM ESPECIAL KUROMI</h3>
                   <span class="loja_preco">R$ 499,00</span>
-                  <button class="loja_botao">
-                     <a href="roupas/roupas2.html" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
-                  </button>
+                  <div class="botoes_para_roupas">
+                     <div class="produto" data-nome="MOLETOM ESPECIAL KUROMI" data-preco="499,00" data-imagem="img/site roupa kawaii/miniaturas/moletom_kuromi (miniatura).png">
+                        <button class="addcarrinho">ADD Carrinho</button>
+                     </div>
+                     <button class="loja_botao">
+                        <a href="roupas/roupas2.html" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
+                     </button>
+                  </div>
                </article>
                <article class="loja_card">
                   <img src="img/site roupa kawaii/kuromi_moletom2.png" class="loja_img">
                   <h3 class="loja_titulo">MOLETOM CANGURU PRETO KUROMI FORTUNE</h3>
                   <span class="loja_preco">R$ 269,00</span>
-                  <button class="loja_botao">
-                     <a href="" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
-                  </button>
+                  <div class="botoes_para_roupas">
+                     <div class="produto" data-nome="MOLETOM CANGURU PRETO KUROMI FORTUNE" data-preco="269,00" data-imagem="img/site roupa kawaii/miniaturas/kuromi_moletom2 (miniatura).png">
+                        <button class="addcarrinho">ADD Carrinho</button>
+                     </div>
+                     <button class="loja_botao">
+                        <a href="" target="_blank"><i class="ri-shopping-bag-2-line"></i></a>
+                     </button>
+                  </div>
                </article>
             </div>
          </section>
-
+         <script src="js/main.js"></script>
          <!--==================== SOBRE ====================-->
          <section class="care section" id="sobre">
             <h2 class="section_titulo">
